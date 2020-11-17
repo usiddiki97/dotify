@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_11_17_161328) do
     t.string "email", null: false
     t.string "username", null: false
     t.string "session_token", null: false
+    t.string "password_digest", null: false
     t.date "birth_date", null: false
     t.string "gender", null: false
     t.datetime "created_at", null: false
