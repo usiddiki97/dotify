@@ -1,9 +1,8 @@
 class Api::UsersController < ApplicationController
 
-    before_action :ensure_logged_in!, except: [:create]
-
     def create
         @user = User.new(user_params)
+        debugger
         if @user.save
             login!(@user)
             render 'api/users/show'
