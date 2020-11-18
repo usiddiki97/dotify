@@ -22,7 +22,8 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.processForm({ user: this.state });
+        const user = Object.assign({}, this.state);
+        this.props.processForm(user);
     }
 
     renderErrors() {
