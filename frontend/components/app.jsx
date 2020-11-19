@@ -7,7 +7,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
     <div>
-        <h1> <a href="#/"> <img src='assets/black_dotify_logo.png' alt="Dotify Logo"/> </a></h1>
+        <h1> <a href="#/"> <img src={window.logoURL}  alt="Dotify Logo"/> </a></h1>
         <GreetingContainer />
         <Switch>
             <AuthRoute exact path="/login" component={LoginFormContainer} />
