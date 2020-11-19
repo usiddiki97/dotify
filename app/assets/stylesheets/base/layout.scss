@@ -11,5 +11,18 @@ body {
     justify-content: center;
 }
 
-div {
+.submit {
+    border-radius: 100px;
+    background: lightgreen;
+    color: white;
+    width: 200px;
+    font-weight: bold;
+}
+
+.free-demo {
+    border-radius: 100px;
+    background: lightblue;
+    color: white;
+    font-weight: bold;
+    width: 200px;
 }

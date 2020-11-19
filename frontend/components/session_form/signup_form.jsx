@@ -47,7 +47,7 @@ class SignupForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit} >
                 <h1>Sign up for free to start listening!</h1>
-                <button onClick={() => this.props.loginDemo()}> Free Demo! </button>
+                <button className='free-demo' onClick={() => this.props.loginDemo()}> Free Demo! </button>
                 <h4>Sign up with your email address</h4>
                 {this.renderErrors()}
                 <br />
@@ -78,7 +78,7 @@ class SignupForm extends React.Component {
                     <input type="radio" name='gender' value='Non-Binary' onChange={this.handleChange('gender')}/>Non-Binary
                 </label>
                 <br />
-                <input type="submit" value='SIGN UP' />
+                <input className='submit' type="submit" value='SIGN UP' />
                 <br/>
                 <p>Have an account? <Link to="/login">Log in</Link></p>
             </form>
