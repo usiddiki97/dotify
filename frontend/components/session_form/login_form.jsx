@@ -12,6 +12,10 @@ class LoginForm extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.clearErrors();
+    }
+
     handleChange(field) {
         return (e) => {
             this.setState({ [field]: e.currentTarget.value });
@@ -39,20 +43,23 @@ class LoginForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit} >
-                <h1>Login!</h1>
-
+                <h2>To continue, log in to Dotify</h2>
+                <button onClick={() => this.props.loginDemo()}> Free Demo! </button>
                 {this.renderErrors()}
-                <br />
-                <label>Username:
-                    <input value={this.state.username} onChange={this.handleChange('username')} />
+                <br/>
+                <label>Username <br/>
+                    <input value={this.state.username} placeholder='Username' onChange={this.handleChange('username')} />
                 </label>
                 <br />
-                <label>Password:
-                    <input type="password" value={this.state.password} onChange={this.handleChange('password')} />
+                <label>Password <br/>
+                    <input type="password" value={this.state.password} placeholder='Password' onChange={this.handleChange('password')} />
                 </label>
                 <br />
-                <input type="submit" value={this.props.formType} />
+                <input type="submit" value='LOG IN' />
+                <br/>
+                <a href="#/signup"> SIGN UP FOR DOTIFY</a>
             </form>
+
         );
     }
 }

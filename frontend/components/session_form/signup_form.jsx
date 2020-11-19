@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -12,6 +13,10 @@ class SignupForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+    }
+
+    componentWillUnmount() {
+        this.props.clearErrors();
     }
 
     handleChange(field) {
@@ -41,32 +46,41 @@ class SignupForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit} >
-                <h1>Sign Up!</h1>
-
+                <h1>Sign up for free to start listening!</h1>
+                <button onClick={() => this.props.loginDemo()}> Free Demo! </button>
+                <h4>Sign up with your email address</h4>
                 {this.renderErrors()}
                 <br />
-                <label>Email:
-                    <input value={this.state.email} onChange={this.handleChange('email')} />
+                <label>What's your email? <br/>
+                    <input value={this.state.email} placeholder='Enter your email' onChange={this.handleChange('email')} />
                 </label>
                 <br />
-                <label>Username:
-                    <input value={this.state.username} onChange={this.handleChange('username')} />
+                <label>Create a password <br/>
+                    <input type="password" value={this.state.password} placeholder='Create a password' onChange={this.handleChange('password')} />
                 </label>
                 <br />
-                <label>Password:
-                    <input type="password" value={this.state.password} onChange={this.handleChange('password')} />
+                <label>What should we call you? <br/>
+                    <input value={this.state.username} placeholder='Enter a username' onChange={this.handleChange('username')} />
                 </label>
                 <br />
-                <label>Birth Date:
+                <label>What's your date of birth? <br/>
                     <input type="date" value={this.state.birth_date} onChange={this.handleChange('birth_date')} />
                 </label>
                 <br />
-                <label>Gender:
-                    <input type="radio" value='Male' onChange={this.handleChange('gender')}/>Male
-                    <input type="radio" value='Female' onChange={this.handleChange('gender')} /> Female
+                <label>What's your gender?</label> <br/>
+                <label>
+                    <input type="radio" name='gender' value='Male' onChange={this.handleChange('gender')}/>Male
+                </label>
+                <label>
+                    <input type="radio" name='gender' value='Female' onChange={this.handleChange('gender')} />Female
+                </label>
+                <label>
+                    <input type="radio" name='gender' value='Non-Binary' onChange={this.handleChange('gender')}/>Non-Binary
                 </label>
                 <br />
-                <input type="submit" value='Sign Up!' />
+                <input type="submit" value='SIGN UP' />
+                <br/>
+                <p>Have an account? <Link to="/login">Log in</Link></p>
             </form>
         );
     }
