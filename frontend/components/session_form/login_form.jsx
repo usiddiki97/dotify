@@ -42,23 +42,25 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit} >
+            <div>
                 <h2>To continue, log in to Dotify</h2>
                 <button className='free-demo' onClick={() => this.props.loginDemo()}> Free Demo! </button>
-                {this.renderErrors()}
-                <br/>
-                <label>Username <br/>
-                    <input value={this.state.username} placeholder='Username' onChange={this.handleChange('username')} />
-                </label>
-                <br />
-                <label>Password <br/>
-                    <input type="password" value={this.state.password} placeholder='Password' onChange={this.handleChange('password')} />
-                </label>
-                <br />
-                <input className='submit' type="submit" value='LOG IN' />
-                <br/>
-                <a href="#/signup"> SIGN UP FOR DOTIFY</a>
-            </form>
+                <form onSubmit={this.handleSubmit} >
+                    {this.renderErrors()}
+                    <br/>
+                    <label>Username <br/>
+                        <input value={this.state.username} placeholder='Username' onChange={this.handleChange('username')} />
+                    </label>
+                    <br />
+                    <label>Password <br/>
+                        <input type="password" value={this.state.password} placeholder='Password' onChange={this.handleChange('password')} />
+                    </label>
+                    <br />
+                    <input className='submit' type="submit" value='LOG IN' />
+                    <br/>
+                    <a href="#/signup"> SIGN UP FOR DOTIFY</a>
+                </form>
+            </div>
 
         );
     }
