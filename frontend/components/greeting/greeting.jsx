@@ -11,12 +11,21 @@ const Greeting = ({ currentUser, logoutSession }) => {
     );
     const personalGreeting = () => (
         <nav className='personal-greeting'>
-            <h2>Hi, {currentUser.username}, welcome to my 3rd day of suffering :)</h2>
+            <h2>Hi, {currentUser.username}</h2>
             <button onClick={logoutSession}>Log Out</button>
         </nav>
     );
 
-    return currentUser ? personalGreeting() : sessionLinks();
+    return (
+        <div className="nav-bar">
+            <nav className="nav-bar-left">
+                <Link to='/'><img className='nav-bar-logo' src={window.logoURL} alt="Dotify Logo" /></Link>
+            </nav>
+            <nav className="nav-bar-right">
+                {currentUser ? personalGreeting() : sessionLinks()}
+            </nav>
+        </div>
+    )
 };
 
 

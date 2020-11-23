@@ -46,6 +46,7 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div>
+                <h1> <a href="#/"> <img src={window.logoURL} alt="Dotify Logo" /> </a></h1>
                 <h1>Sign up for free to start listening!</h1>
                 <button className='free-demo' onClick={() => this.props.loginDemo()}> Free Demo! </button>
                 <form onSubmit={this.handleSubmit} >

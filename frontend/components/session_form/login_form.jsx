@@ -43,6 +43,7 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div>
+                <h1> <a href="#/"> <img src={window.logoURL} alt="Dotify Logo" /> </a></h1>
                 <h2>To continue, log in to Dotify</h2>
                 <button className='free-demo' onClick={() => this.props.loginDemo()}> Free Demo! </button>
                 <form onSubmit={this.handleSubmit} >
