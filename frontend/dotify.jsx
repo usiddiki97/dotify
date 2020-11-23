@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import configureStore from './store/store';
 import Root from "./components/root";
 
+import { requestAllArtists, requestArtist } from './actions/artist_actions';
+
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
     let store;
@@ -19,4 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
         store = configureStore();
     }
     ReactDOM.render(<Root store={store} />, root);
+
+    // TESTING
+    window.getState = store.getState
+    window.dispatch = store.dispatch
+    window.requestAllArtists = requestAllArtists;
+    window.requestArtist = requestArtist;
 })
