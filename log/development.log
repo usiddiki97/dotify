@@ -5149,3 +5149,283 @@ Processing by Api::ArtistsController#index as JSON
 Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for ::1 at 2020-11-23 10:49:57 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 322ms (Views: 319.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-23 11:15:03 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 326ms (Views: 324.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/songs" for ::1 at 2020-11-23 11:15:06 -0500
+Processing by Api::SongsController#index as JSON
+  Rendering api/songs/index.json.jbuilder
+  [1m[36mSong Load (1.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/api/songs/index.json.jbuilder:1
+  Rendered api/songs/_song.json.jbuilder (0.3ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/index.json.jbuilder (9.8ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/songs/2" for ::1 at 2020-11-23 11:17:48 -0500
+Processing by Api::SongsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/songs_controller.rb:9
+  Rendering api/songs/show.json.jbuilder
+  Rendered api/songs/_song.json.jbuilder (0.3ms)
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/songs/show.json.jbuilder:7
+  Rendered api/albums/_album.json.jbuilder (0.3ms)
+  Rendered api/albums/_album.json.jbuilder (0.0ms)
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" INNER JOIN "albums" ON "artists"."id" = "albums"."artist_id" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/songs/show.json.jbuilder:14
+  Rendered api/artists/_artist.json.jbuilder (0.3ms)
+  Rendered api/songs/show.json.jbuilder (8.5ms)
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2020-11-23 11:20:14 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 324ms (Views: 321.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/songs" for ::1 at 2020-11-23 11:20:27 -0500
+Processing by Api::SongsController#index as JSON
+  Rendering api/songs/index.json.jbuilder
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/api/songs/index.json.jbuilder:1
+  Rendered api/songs/_song.json.jbuilder (0.3ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/index.json.jbuilder (9.9ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/songs/2" for ::1 at 2020-11-23 11:20:52 -0500
+Processing by Api::SongsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/songs_controller.rb:9
+  Rendering api/songs/show.json.jbuilder
+  Rendered api/songs/_song.json.jbuilder (0.2ms)
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/songs/show.json.jbuilder:7
+  Rendered api/albums/_album.json.jbuilder (0.2ms)
+  Rendered api/albums/_album.json.jbuilder (0.0ms)
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" INNER JOIN "albums" ON "artists"."id" = "albums"."artist_id" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/songs/show.json.jbuilder:14
+  Rendered api/artists/_artist.json.jbuilder (0.2ms)
+  Rendered api/songs/show.json.jbuilder (7.5ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/songs/2" for ::1 at 2020-11-23 11:21:34 -0500
+Processing by Api::SongsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/songs_controller.rb:9
+  Rendering api/songs/show.json.jbuilder
+  Rendered api/songs/_song.json.jbuilder (0.2ms)
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/songs/show.json.jbuilder:7
+  Rendered api/albums/_album.json.jbuilder (0.3ms)
+  Rendered api/albums/_album.json.jbuilder (0.0ms)
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" INNER JOIN "albums" ON "artists"."id" = "albums"."artist_id" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/songs/show.json.jbuilder:14
+  Rendered api/artists/_artist.json.jbuilder (0.3ms)
+  Rendered api/songs/show.json.jbuilder (6.6ms)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-11-23 11:23:08 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 322ms (Views: 319.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/songs" for ::1 at 2020-11-23 11:23:20 -0500
+Processing by Api::SongsController#index as JSON
+  Rendering api/songs/index.json.jbuilder
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/api/songs/index.json.jbuilder:1
+  Rendered api/songs/_song.json.jbuilder (0.3ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.1ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/index.json.jbuilder (8.1ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/songs/2" for ::1 at 2020-11-23 11:23:29 -0500
+Processing by Api::SongsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (16.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/songs_controller.rb:9
+  Rendering api/songs/show.json.jbuilder
+  Rendered api/songs/_song.json.jbuilder (0.2ms)
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/songs/show.json.jbuilder:7
+  Rendered api/albums/_album.json.jbuilder (0.2ms)
+  Rendered api/albums/_album.json.jbuilder (0.0ms)
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" INNER JOIN "albums" ON "artists"."id" = "albums"."artist_id" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/songs/show.json.jbuilder:14
+  Rendered api/artists/_artist.json.jbuilder (0.2ms)
+  Rendered api/songs/show.json.jbuilder (5.5ms)
+Completed 200 OK in 33ms (Views: 15.2ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-23 11:25:10 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 304ms (Views: 301.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/songs" for ::1 at 2020-11-23 11:25:15 -0500
+Processing by Api::SongsController#index as JSON
+  Rendering api/songs/index.json.jbuilder
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/api/songs/index.json.jbuilder:1
+  Rendered api/songs/_song.json.jbuilder (0.2ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/_song.json.jbuilder (0.0ms)
+  Rendered api/songs/index.json.jbuilder (9.4ms)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/songs/2" for ::1 at 2020-11-23 11:25:17 -0500
+Processing by Api::SongsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/songs_controller.rb:9
+  Rendering api/songs/show.json.jbuilder
+  Rendered api/songs/_song.json.jbuilder (0.2ms)
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/songs/show.json.jbuilder:7
+  Rendered api/albums/_album.json.jbuilder (0.2ms)
+  Rendered api/albums/_album.json.jbuilder (0.1ms)
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" INNER JOIN "albums" ON "artists"."id" = "albums"."artist_id" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/songs/show.json.jbuilder:14
+  Rendered api/artists/_artist.json.jbuilder (0.2ms)
+  Rendered api/songs/show.json.jbuilder (5.7ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-11-23 11:30:38 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 312ms (Views: 310.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/albums" for ::1 at 2020-11-23 11:31:16 -0500
+Processing by Api::AlbumsController#index as JSON
+  Rendering api/albums/index.json.jbuilder
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/api/albums/index.json.jbuilder:1
+  Rendered api/albums/_album.json.jbuilder (0.2ms)
+  Rendered api/albums/_album.json.jbuilder (0.0ms)
+  Rendered api/albums/_album.json.jbuilder (0.0ms)
+  Rendered api/albums/_album.json.jbuilder (0.0ms)
+  Rendered api/albums/_album.json.jbuilder (0.0ms)
+  Rendered api/albums/_album.json.jbuilder (0.0ms)
+  Rendered api/albums/_album.json.jbuilder (0.0ms)
+  Rendered api/albums/_album.json.jbuilder (0.0ms)
+  Rendered api/albums/_album.json.jbuilder (0.0ms)
+  Rendered api/albums/_album.json.jbuilder (0.0ms)
+  Rendered api/albums/index.json.jbuilder (9.2ms)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/albums/2" for ::1 at 2020-11-23 11:31:39 -0500
+Processing by Api::AlbumsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/_album.json.jbuilder (0.3ms)
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."album_id" = $1[0m  [["album_id", 2]]
+  ↳ app/views/api/albums/show.json.jbuilder:6
+  Rendered api/songs/_song.json.jbuilder (0.3ms)
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/albums/show.json.jbuilder:15
+  Rendered api/artists/_artist.json.jbuilder (0.2ms)
+  Rendered api/albums/show.json.jbuilder (7.7ms)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/artists" for ::1 at 2020-11-23 11:33:15 -0500
+Processing by Api::ArtistsController#index as JSON
+  Rendering api/artists/index.json.jbuilder
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/api/artists/index.json.jbuilder:1
+  Rendered api/artists/_artist.json.jbuilder (0.2ms)
+  Rendered api/artists/_artist.json.jbuilder (0.0ms)
+  Rendered api/artists/_artist.json.jbuilder (0.0ms)
+  Rendered api/artists/_artist.json.jbuilder (0.0ms)
+  Rendered api/artists/_artist.json.jbuilder (0.0ms)
+  Rendered api/artists/_artist.json.jbuilder (0.0ms)
+  Rendered api/artists/_artist.json.jbuilder (0.0ms)
+  Rendered api/artists/_artist.json.jbuilder (0.0ms)
+  Rendered api/artists/_artist.json.jbuilder (0.0ms)
+  Rendered api/artists/_artist.json.jbuilder (0.0ms)
+  Rendered api/artists/index.json.jbuilder (7.7ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/artists/2" for ::1 at 2020-11-23 11:33:35 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/_artist.json.jbuilder (0.2ms)
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 2]]
+  ↳ app/views/api/artists/show.json.jbuilder:6
+  Rendered api/songs/_song.json.jbuilder (0.2ms)
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 2]]
+  ↳ app/views/api/artists/show.json.jbuilder:14
+  Rendered api/albums/_album.json.jbuilder (0.2ms)
+  Rendered api/artists/show.json.jbuilder (6.0ms)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.9ms)
+
+
