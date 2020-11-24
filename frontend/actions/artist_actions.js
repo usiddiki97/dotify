@@ -8,18 +8,20 @@ const receiveAllArtists = artists => ({
     artists
 })
 
-const receiveArtist = artist => ({
+const receiveArtist = ({ songs, albums, artist }) => ({
     type: RECEIVE_ARTIST,
+    songs,
+    albums,
     artist
 })
 
 // thunk action creators
 export const requestAllArtists = () => dispatch => {
     return ArtistUtil.fetchArtists()
-        .then(artists => dispatch(receiveAllArtists(artists)))
+    .then(artists => dispatch(receiveAllArtists(artists)))
 }
 
 export const requestArtist = (artistId) => dispatch => {
     return ArtistUtil.fetchArtist(artistId)
-        .then(artist => dispatch(receiveArtist(artist)))
+    .then(response => dispatch(receiveArtist(response)))
 }

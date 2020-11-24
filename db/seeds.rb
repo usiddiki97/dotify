@@ -12,10 +12,15 @@ Album.destroy_all
 Artist.destroy_all
 
 demo_user = User.create(username: 'Demo', password: 't42gf4g24v7875g784', email: 'demouser@fakeboi.com', gender: 'Male', birth_date: 'Tue, 10 Nov 2020')
+usiddiki = User.create(username: 'usiddiki', password: 'hunter12', email: 'usiddiki97@gmail.com', gender: 'Male', birth_date: 'Tue, 10 Nov 2020')
 
 artist_1 = Artist.create(artist_name: 'The Weeknd')
-album_1 = Album.create(album_name: 'Starboy', artist_id: artist_1.id)
-song_1 = Song.create(song_title: 'Starboy', album_id: album_1.id)
+    album_1_1 = Album.create(album_name: 'Starboy', artist_id: artist_1.id)
+        song_1_1_1 = Song.create(song_title: 'Starboy', album_id: album_1_1.id)
+        song_1_1_2 = Song.create(song_title: 'Reminder', album_id: album_1_1.id)
+    album_1_2 = Album.create(album_name: 'After Hours', artist_id: artist_1.id)
+        song_1_2_1 = Song.create(song_title: 'Heartless', album_id: album_1_2.id)
+        song_1_2_2 = Song.create(song_title: 'Blinding Lights', album_id: album_1_2.id)
 
 artist_2 = Artist.create(artist_name: 'Drake')
 album_2 = Album.create(album_name: "Scorpion", artist_id: artist_2.id)

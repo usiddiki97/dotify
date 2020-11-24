@@ -8,9 +8,11 @@ const receiveAllSongs = songs => ({
     songs
 })
 
-const receiveSong = song => ({
+const receiveSong = ({song, album, artist}) => ({
     type: RECEIVE_SONG,
-    song
+    song,
+    album,
+    artist
 })
 
 // thunk action creators
@@ -21,5 +23,5 @@ export const requestAllSongs = () => dispatch => {
 
 export const requestSong = (songId) => dispatch => {
     return SongUtil.fetchSong(songId)
-    .then(song => dispatch(receiveSong(song)))
+    .then(response => dispatch(receiveSong(response)))
 }
