@@ -12,6 +12,7 @@ class Api::SongsController < ApplicationController
 
     def toggle_like
         @song = Song.find(params[:id])
+        @liked_songs = current_user.liked_songs
         unless @song.liked_by_user?(current_user)
             @like = current_user.likes.new(likeable_id: @song.id, likeable_type: 'Song')
             if @like.save

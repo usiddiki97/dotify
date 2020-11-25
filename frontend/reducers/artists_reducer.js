@@ -4,7 +4,7 @@ import { RECEIVE_ALBUM } from '../actions/album_actions';
 
 const artistsReducer = (state = {}, action) => {
     Object.freeze(state)
-    debugger;
+    // debugger;
     switch (action.type) {
         case RECEIVE_ALL_ARTISTS:
             return action.artists

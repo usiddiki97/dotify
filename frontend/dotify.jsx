@@ -6,6 +6,7 @@ import Root from "./components/root";
 import { requestAllSongs, requestSong } from './actions/song_actions';
 import { requestAllAlbums, requestAlbum } from './actions/album_actions';
 import { requestAllArtists, requestArtist } from './actions/artist_actions';
+import { requestAllLikes, toggleLike } from './actions/likes_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -33,4 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.requestAlbum = requestAlbum;
     window.requestAllArtists = requestAllArtists;
     window.requestArtist = requestArtist;
+    window.requestAllLikes = requestAllLikes;
+    window.toggleLike = toggleLike;
 })
