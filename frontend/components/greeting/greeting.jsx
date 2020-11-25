@@ -11,7 +11,7 @@ const Greeting = ({ currentUser, logoutSession }) => {
     );
     const personalGreeting = () => (
         <nav className='personal-greeting'>
-            <h2>Hi, {currentUser.username}</h2>
+            <h2>Hi, {currentUser.username}, you got a fat ass 🐙</h2>
             <button onClick={logoutSession}>Log Out</button>
         </nav>
     );
