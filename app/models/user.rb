@@ -21,6 +21,11 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: 'Like'
 
+    has_many :liked_songs,
+    through: :likes,
+    source: :likeable,
+    source_type: 'Song'
+
     attr_reader :password
     after_initialize :ensure_session_token
 

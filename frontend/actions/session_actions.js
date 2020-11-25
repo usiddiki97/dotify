@@ -35,7 +35,7 @@ export const clearErrors = () => {
 // thunk action creators
 
 export const signupUser = user => dispatch => {
-    debugger
+    // debugger
     return SessionUtil.signupUser(user)
     .then( user => dispatch(receiveCurrentUser(user)),
     errors => dispatch(receiveErrors(errors.responseJSON)) )

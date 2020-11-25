@@ -8,9 +8,11 @@ const receiveAllAlbums = albums => ({
     albums
 })
 
-const receiveAlbum = album => ({
+const receiveAlbum = ({songs, album, artist}) => ({
     type: RECEIVE_ALBUM,
-    album
+    songs,
+    album,
+    artist
 })
 
 // thunk action creators
@@ -21,5 +23,5 @@ export const requestAllAlbums = () => dispatch => {
 
 export const requestAlbum = (albumId) => dispatch => {
     return AlbumUtil.fetchAlbum(albumId)
-        .then(album => dispatch(receiveAlbum(album)))
+        .then(response => dispatch(receiveAlbum(response)))
 }

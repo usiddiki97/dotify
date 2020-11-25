@@ -22,4 +22,8 @@ class Song < ApplicationRecord
     source: :artist 
     
 
+    def liked_by_user?(user)
+        query = Like.where(likeable_type: 'Song').where(likeable_id: self.id).where(user_id: user.id)
+        !query.empty?
+    end
 end

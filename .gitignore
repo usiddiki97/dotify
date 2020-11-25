@@ -9,6 +9,7 @@ app/assets/javascripts/bundle.js.map
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
+/tmp/cache/*
 !/log/.keep
 !/tmp/.keep
 # Ignore uploaded files in development
