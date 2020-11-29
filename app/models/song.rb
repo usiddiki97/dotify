@@ -20,6 +20,14 @@ class Song < ApplicationRecord
     has_one :artist,
     through: :album,
     source: :artist 
+
+    has_many :playlist_songs,
+    foreign_key: :song_id,
+    class_name: 'PlaylistSong'
+
+    has_many :playlists,
+    through: :playlist_songs,
+    source: :playlist
     
 
     def liked_by_user?(user)

@@ -10,6 +10,9 @@ User.destroy_all
 Song.destroy_all
 Album.destroy_all
 Artist.destroy_all
+Like.destroy_all
+Playlist.destroy_all
+PlaylistSong.destroy_all
 
 demo_user = User.create(username: 'Demo', password: 't42gf4g24v7875g784', email: 'demouser@fakeboi.com', gender: 'Male', birth_date: 'Tue, 10 Nov 2020')
 usiddiki = User.create(username: 'usiddiki', password: 'hunter12', email: 'usiddiki97@gmail.com', gender: 'Male', birth_date: 'Tue, 10 Nov 2020')

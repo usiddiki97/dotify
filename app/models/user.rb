@@ -26,6 +26,10 @@ class User < ApplicationRecord
     source: :likeable,
     source_type: 'Song'
 
+    has_many :playlists,
+    foreign_key: :user_id,
+    class_name: 'Playlist'
+
     attr_reader :password
     after_initialize :ensure_session_token
 
