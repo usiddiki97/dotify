@@ -18,6 +18,14 @@
 #               api_artists GET    /api/artists(.:format)                                                                   api/artists#index {:format=>:json}
 #                api_artist GET    /api/artists/:id(.:format)                                                               api/artists#show {:format=>:json}
 #                 api_likes GET    /api/likes(.:format)                                                                     api/likes#index {:format=>:json}
+#          add_api_playlist POST   /api/playlists/:id/add(.:format)                                                         api/playlists#add {:format=>:json}
+#       remove_api_playlist POST   /api/playlists/:id/remove(.:format)                                                      api/playlists#remove {:format=>:json}
+#             api_playlists GET    /api/playlists(.:format)                                                                 api/playlists#index {:format=>:json}
+#                           POST   /api/playlists(.:format)                                                                 api/playlists#create {:format=>:json}
+#              api_playlist GET    /api/playlists/:id(.:format)                                                             api/playlists#show {:format=>:json}
+#                           PATCH  /api/playlists/:id(.:format)                                                             api/playlists#update {:format=>:json}
+#                           PUT    /api/playlists/:id(.:format)                                                             api/playlists#update {:format=>:json}
+#                           DELETE /api/playlists/:id(.:format)                                                             api/playlists#destroy {:format=>:json}
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
 #        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
@@ -39,6 +47,12 @@ Rails.application.routes.draw do
     resources :albums, only: [:show, :index]
     resources :artists, only: [:show, :index]
     resources :likes, only: [:index]
+    resources :playlists, only: [:index, :show, :create, :update, :destroy] do
+      member do
+        post :add
+        post :remove
+      end
+    end
   end
 
 end

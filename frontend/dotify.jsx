@@ -7,6 +7,7 @@ import { requestAllSongs, requestSong } from './actions/song_actions';
 import { requestAllAlbums, requestAlbum } from './actions/album_actions';
 import { requestAllArtists, requestArtist } from './actions/artist_actions';
 import { requestAllLikes, toggleLike } from './actions/likes_actions';
+import { requestAllPlaylists, requestPlaylist, createPlaylist, updatePlaylist, deletePlaylist } from './actions/playlist_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -36,4 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.requestArtist = requestArtist;
     window.requestAllLikes = requestAllLikes;
     window.toggleLike = toggleLike;
+    window.requestAllPlaylists = requestAllPlaylists;
+    window.requestPlaylist = requestPlaylist;
+    window.createPlaylist = createPlaylist;
+    window.updatePlaylist = updatePlaylist;
+    window.deletePlaylist = deletePlaylist;
 })

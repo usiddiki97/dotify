@@ -26,5 +26,5 @@ class Api::SongsController < ApplicationController
             render 'api/likes/index'
         end
     end
-    
+
 end
