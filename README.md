@@ -1,13 +1,12 @@
-# README
+# Dotify
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Dotify is an audio streaming platform inspired by Spotify.
 
-Things you may want to cover:
+To build my Dotify app I used the following stack:
 
-* Ruby version
+* Ruby on Rails - web application framework
 
-* System dependencies
+* PostgreSQL - database management
 
 * Configuration
 
